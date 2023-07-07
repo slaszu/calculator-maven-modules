@@ -4,11 +4,18 @@ Goal: create simple project, use module.
 
 # how it works
 
-run: `mvn clear package`  
-run: `java -jar application.module/target/application.module-1.0.jar`  
+Build uber jar (`./mvnw package`) and run it with cli (`java -jar ...`): 
+```
+./build_and_run_fat_jar.sh
+```
+
+Build modules (`./mvnw install`) and run it with maven-exec-plugin (`./mvnw exec:java`):  
+```
+./build_and_run_exec_java.sh
+```
 
 # todo
 
-1. add `mvnw` (maven wrapper)
+1. add tests to modules
 2. add more options reading from input
-3. add mavane-exec-plugin to run project without jar
+
